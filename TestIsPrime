@@ -1,0 +1,30 @@
+program TestIsPrime;
+
+function IsPrime(Number: Integer): Boolean;
+var
+  i: Integer;
+begin
+  if Number < 2 then
+    IsPrime := False
+  else
+begin
+  for i := 2 to Trunc(Sqrt(Number)) do
+    if (Number mod i) = 0 then
+    begin
+         IsPrime := False
+         
+    end;
+  end;
+end;
+
+ 
+begin
+  // Test cases
+  writeln('IsPrime(2) t: ', IsPrime(2));  // Expected output: True
+  writeln('IsPrime(3):t ', IsPrime(3));  // Expected output: True
+  writeln('IsPrime(4):f ', IsPrime(4));  // Expected output: False
+  writeln('IsPrime(17):t ', IsPrime(17));  // Expected output: True
+  writeln('IsPrime(20): f', IsPrime(20));  // Expected output: False
+  writeln('IsPrime(29): t', IsPrime(29));  // Expected output: True
+  writeln('IsPrime(104):f',IsPrime(104)); //Expected output: False
+end.
